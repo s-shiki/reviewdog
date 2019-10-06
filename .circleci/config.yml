@@ -26,7 +26,7 @@ jobs:
           paths: .
       - run:
           command:
-            pwd
+            ls -a
   prh:
     docker:
       - image: ssiki/prh:1.0.0
