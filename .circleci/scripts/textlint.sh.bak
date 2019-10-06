@@ -1,5 +1,5 @@
 #!/bin/sh
-textlint --plugin review --preset preset-ja-technical-writing article/*.re > \
+textlint --format checkstyle --config .textlintrc article/*.re > \
 textlint.log || EXIT_CODE=$?
 
 cat textlint.log | bin/reviewdog -reporter=github-pr-review \
