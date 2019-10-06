@@ -6,14 +6,14 @@ workflows:
     jobs:
       - prepare
       - prh:
-        requires:
-          - prepare
+          requires:
+            - prepare
       - redpen:
-        requires:
-          - prepare
+          requires:
+            - prepare
       - textlint:
-        requires:
-          - prepare
+          requires:
+            - prepare
 
 jobs:
   prepare:
