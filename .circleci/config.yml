@@ -33,7 +33,7 @@ jobs:
       - install_reviewdog
       - attach_workspace:
           at: .
-      - run: .circleci/scripts/prh.sh
+      - run: scripts/prh.sh
   redpen:
     docker:
       - image: ssiki/redpen:1.0.0
@@ -43,7 +43,7 @@ jobs:
       - install_reviewdog
       - attach_workspace:
           at: .
-      - run: .circleci/scripts/redpen.sh
+      - run: scripts/redpen.sh
   textlint:
     docker:
       - image: ssiki/textlint:1.0.0
@@ -53,7 +53,7 @@ jobs:
       - install_reviewdog
       - attach_workspace:
           at: .
-      - run: .circleci/scripts/textlint.sh
+      - run: scripts/textlint.sh
 
 commands:
   install_ca_certificates:
