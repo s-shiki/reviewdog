@@ -24,6 +24,9 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
+      - run:
+          command:
+            echo .
   prh:
     docker:
       - image: ssiki/prh:1.0.0
@@ -33,7 +36,7 @@ jobs:
       - install_reviewdog
       - attach_workspace:
           at: .
-      - run: reviewdog/.circleci/scripts/prh.sh
+      - run: .circleci/scripts/prh.sh
   redpen:
     docker:
       - image: ssiki/redpen:1.0.0
@@ -43,7 +46,7 @@ jobs:
       - install_reviewdog
       - attach_workspace:
           at: .
-      - run: reviewdog/.circleci/scripts/redpen.sh
+      - run: .circleci/scripts/redpen.sh
   textlint:
     docker:
       - image: ssiki/textlint:1.0.0
@@ -53,7 +56,7 @@ jobs:
       - install_reviewdog
       - attach_workspace:
           at: .
-      - run: reviewdog/.circleci/scripts/textlint.sh
+      - run: .circleci/scripts/textlint.sh
 
 commands:
   install_ca_certificates:
