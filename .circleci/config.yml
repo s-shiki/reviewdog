@@ -64,5 +64,4 @@ commands:
       - run: apk --update add git
   install_reviewdog:
     steps:
-      - run: >
-        GITHUB_URL=https://raw.githubusercontent.com/reviewdog/reviewdog && INSTALL_URL=${GITHUB_URL}/master/install.sh && wget -O - -q ${INSTALL_URL} | sh -s
+      - run: GITHUB_URL=https://raw.githubusercontent.com/reviewdog/reviewdog && INSTALL_URL=${GITHUB_URL}/master/install.sh && wget -O - -q ${INSTALL_URL} | sh -s
