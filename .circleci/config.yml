@@ -36,8 +36,9 @@ jobs:
       - install_reviewdog
       - attach_workspace:
           at: .
-      - command: ls -a
-      - run: .circleci/scripts/prh.sh
+      - run:
+          command:
+            ls -a
   redpen:
     docker:
       - image: ssiki/redpen:1.0.0
