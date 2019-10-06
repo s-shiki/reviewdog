@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 textlint --format checkstyle --config .textlintrc article/*.re > \
 textlint.log || EXIT_CODE=$?
 
