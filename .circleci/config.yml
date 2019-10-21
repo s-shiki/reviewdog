@@ -14,6 +14,11 @@ workflows:
       - textlint:
           requires:
             - prepare
+      - generate:
+          requires:
+            - prh
+            - redpen
+            - textlint
 
 jobs:
   prepare:
@@ -57,6 +62,16 @@ jobs:
       - attach_workspace:
           at: .
       - run: .circleci/scripts/textlint.sh
+  generate:
+    docker:
+      - image: vvakame/review:3.1
+    steps:
+      - attach_workspace:
+          at: .
+      - run: .circleci/scripts/generate.sh
+      - store_artifacts:
+          path: articles/ReVIEW-Template.pdf
+          destination: ReVIEW-Template.pdf
 
 commands:
   install_ca_certificates:
